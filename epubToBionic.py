@@ -56,6 +56,10 @@ def clean_generated_html(html_content):
 def create_bionic_epub(input_path, output_path):
     book = epub.read_epub(input_path)
         
+    # Vérifier et définir l'UID s'il est manquant
+    if not book.uid:
+        book.set_identifier('urn:uuid:12345678-1234-5678-1234-567812345678')
+        
     # Parcourir tous les éléments du livre EPUB
     for item in book.get_items():
         if isinstance(item, epub.EpubHtml):
