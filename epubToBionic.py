@@ -88,7 +88,7 @@ def create_bionic_epub(input_path, output_path):
 if __name__ == '__main__':
     import sys
     if len(sys.argv) != 3:
-        print("Usage: python bionic_reading_epub.py <input_epub> <output_epub>")
+        print("Usage: python epubToBionic.py <input_epub> <output_epub>")
         sys.exit(1)
     
     input_epub = sys.argv[1]
