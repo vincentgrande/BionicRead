@@ -9,6 +9,7 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 API_KEY = config['security']['api_key']
 
+
 # Dossier où les fichiers téléchargés seront stockés temporairement
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -69,4 +70,4 @@ def clear_upload_folder(folder):
             print(f'Failed to delete {file_path}. Reason: {e}')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5005,debug=True)
